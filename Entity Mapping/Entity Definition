@@ -1,0 +1,43 @@
+#Hannah Neymeyer
+#Dr. Loclair
+#CSC 415
+#Knowledge representation graphs applicable to AI Chat Bot
+
+#This code servers as the driver to pull entities and store them as nodes
+#This is needed before a knowledge graph is created so that the nodes and edges between them are made
+#For the purpose of this assignment the general goal of the chatbot in theory is to be able to connect multiple points together for a story
+#The enities mapped would be key phrases from certain articles, so the chatbot would be able to appear to be intelligent by referring to the knowledge grapgh that relates multiple topics
+
+def extract_the_entities(sentences):
+#We want to extract the entities in the form of sentences 
+   entity_one = ""
+   entity_two = ""
+   
+   ID = ""
+  #Break up sentence identifiers
+   prefix = ""
+   modifier = ""
+  
+  
+   for ID in graph(sentences):
+      
+       if ID.dep _ != "punct":
+           #  check if word is compound or not
+           if ID.dep_ == "compound_word":
+               pre = ID.text
+               if dep_pre_token == "compound_word":
+                   pre = txt_pre_ID + " "+ ID.text +"modifier
+  
+           if ID.dep_.find("subject") == True:
+               entity_one =  "+ pre + " "+ ID.text
+               pre = ""
+               dep_pre_ID = ""
+               txt_pre_ID = ""
+       
+           # update variable values
+           dep_pre_ID = ID.dep_
+           txt_pre_ID = ID.text
+          
+#Couple the entities  together           
+   return [entity_one(), entity_two()]
+   
