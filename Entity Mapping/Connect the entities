@@ -27,4 +27,11 @@ def connect_entities(X):
    span_len = word[connector[m][1]:connector[m][2]]
    return span_len.word
    
+   ##### EXAMPLE OF HOW I WANT THIS TO WORK USING INSECTS: 
+   #canFLy(X) :- Mosquito(X), not caterpilar(X).
+    #Mosquito(steven).
+    #Mosquito(bert).
+    #caterpilar(becky).
+     #:- canFly(X), caterpilar(X). ###
+   
    relationship_to_words = [connect_entities(z) for k (data['text'][:600])]
