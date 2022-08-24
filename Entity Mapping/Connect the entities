@@ -1,0 +1,30 @@
+#Hannah Neymeyer
+#Dr. Loclair
+#CSC 415
+#Knowledge representation graphs applicable to AI Chat Bot
+
+#This code servers as the driver to connect the entities previously defined
+#This is needed before a knowledge graph is created so that the nodes and edges between them are made
+#For the purpose of this assignment the general goal of the chatbot in theory is to be able to connect multiple points together for a story
+#The enities mapped would be key phrases from certain articles, so the chatbot would be able to appear to be intelligent by referring to the knowledge grapgh that relates multiple topics
+
+def connect_entities(X):
+  
+   word = nlp(X)
+   connector = connector(word.dictionary)
+  
+  #This helps try to find the main root of the word which allows more accurate node relation connecting 
+   ID_pattern = [{'DEP':'ROOT'},
+           {'DEP':'prep','OP':"?"},
+           {'DEP':'agent','OP':"?"}, 
+           {'POS':'ADJ','OP':"?"}]
+  
+   connector.add.words("matching_1", None, ID_pattern)
+   connector = connector(word)
+   m = len(connector) - 1
+  
+  #connecting the related nodes together
+   span_len = word[connector[m][1]:connector[m][2]]
+   return span_len.word
+   
+   relationship_to_words = [connect_entities(z) for k (data['text'][:600])]
