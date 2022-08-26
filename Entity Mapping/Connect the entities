@@ -35,3 +35,5 @@ def connect_entities(X):
      #:- canFly(X), caterpilar(X). ###
    
    relationship_to_words = [connect_entities(z) for k (data['text'][:600])]
+   Return "ID_pattern"
+   Return
