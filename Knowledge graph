@@ -1,0 +1,32 @@
+#Hannah Neymeyer
+#Dr. Locklair
+#CSC 415
+#Resource code: https://www.kaggle.com/code/nageshsingh/build-knowledge-graph-using-python/notebook
+
+#pull the main subject
+Main = [i[0] for i in entities_paired]
+target = [i[1] for i in entities_paired]
+
+knowledge_graph = pd.frame({'main':main, 'target':target, 'edge':relations})
+knowledge_graph
+
+# create a directed-graph from a dataframe
+G=nx.from_edgelist(knowledge_graph, "main", "target", 
+                          edge_attr=True, create_using=nx.MultiDiGraph())
+                          
+plt.graph(size=(20,20))
+G=nx.(kg_df[kg_df['edge']=="composed by"], "main", "target", 
+                          edge_attr=True, create_using=nx.MultiDiGraph())
+
+plt.graph(figsize=(20,20))
+pos = nx.spring_layout(G, k = 0.5)
+nx.draw(G, with_labels=True, node_color='red', node_size=1500, edge_cmap=plt.cm.Blues, pos = pos, font_weight='bold')
+plt.show()
+
+G=nx.from_edgelist(kg_df[kg_df['edge']=="written by"], "main", "target", 
+                          edge_attr=True, create_using=nx.MultiDiGraph())
+
+plt.graph(figsize=(12,12))
+pos = nx.spring_layout(G, k = 0.5)
+nx.draw(G, with_labels=True, node_color='red', node_size=1500, edge_cmap=plt.cm.Blues, pos = pos)
+plt.show()
